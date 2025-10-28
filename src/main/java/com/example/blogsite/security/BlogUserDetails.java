@@ -3,12 +3,15 @@ package com.example.blogsite.security;
 import com.example.blogsite.domain.entity.User;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.stereotype.Component;
 
 import java.util.Collection;
 import java.util.List;
+
 
 @Getter
 @RequiredArgsConstructor

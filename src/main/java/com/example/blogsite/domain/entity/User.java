@@ -1,5 +1,6 @@
 package com.example.blogsite.domain.entity;
 
+import com.example.blogsite.domain.dto.Role;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -26,6 +27,9 @@ public class User {
 
     @Column(nullable = false, unique = true)
     private String username;
+
+    @Enumerated(EnumType.STRING)
+    private Role role;
 
     @Column(nullable = false)
     private LocalDateTime createdAt;

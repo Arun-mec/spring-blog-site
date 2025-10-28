@@ -2,6 +2,7 @@ package com.example.blogsite.controller;
 
 import com.example.blogsite.domain.dto.AuthResponse;
 import com.example.blogsite.domain.dto.LoginRequest;
+import com.example.blogsite.security.BlogUserDetails;
 import com.example.blogsite.service.AuthenticationService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -21,9 +22,9 @@ public class AuthController {
 
     @PostMapping
     public ResponseEntity<AuthResponse> loginUser(@RequestBody LoginRequest loginRequest) {
-        UserDetails userDetails = authenticationService
-                .authenticateUser(loginRequest.getUsername(), loginRequest.getPassword());
-        String token = authenticationService.generateToken(userDetails);
+        BlogUserDetails blogUserDetails = authenticationService
+                .authenticateUser(loginRequest.getEmail(), loginRequest.getPassword());
+        String token = authenticationService.generateToken(blogUserDetails);
 
         AuthResponse authResponse = AuthResponse.builder()
                 .token(token)

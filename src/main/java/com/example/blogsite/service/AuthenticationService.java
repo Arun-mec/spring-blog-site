@@ -1,10 +1,10 @@
 package com.example.blogsite.service;
 
-import org.springframework.security.core.userdetails.UserDetails;
+import com.example.blogsite.security.BlogUserDetails;
 
 public interface AuthenticationService {
 
-    UserDetails authenticateUser(String email, String password);
+    BlogUserDetails authenticateUser(String email, String password);
 
-    String generateToken(UserDetails userDetails);
+    String generateToken(BlogUserDetails userDetails);
 }
