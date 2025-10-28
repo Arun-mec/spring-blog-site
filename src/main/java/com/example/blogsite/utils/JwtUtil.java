@@ -1,5 +1,7 @@
 package com.example.blogsite.utils;
 
+import com.example.blogsite.security.BlogUserDetails;
+import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.security.Keys;
 import org.springframework.beans.factory.annotation.Value;
@@ -29,4 +31,23 @@ public class JwtUtil {
         return Keys.hmacShaKeyFor(secretString.getBytes());
     }
 
+    public String getUsername(String jwtToken) {
+        return getClaims(jwtToken).getSubject();
+    }
+
+    public boolean validateToken(BlogUserDetails blogUserDetails, String username, String token) {
+        return (username.equals(blogUserDetails.getUsername()) && !validateExpiration(token));
+    }
+
+    protected boolean validateExpiration(String token) {
+        return getClaims(token).getExpiration().before(new Date(System.currentTimeMillis()));
+    }
+
+    protected Claims getClaims(String jwtToken) {
+        return Jwts.parser()
+                .setSigningKey(getSecretKey(secretString))
+                .build()
+                .parseClaimsJws(jwtToken)
+                .getBody();
+    }
 }

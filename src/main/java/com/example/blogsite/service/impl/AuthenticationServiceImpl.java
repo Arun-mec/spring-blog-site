@@ -33,4 +33,5 @@ public class AuthenticationServiceImpl implements AuthenticationService {
     public String generateToken(BlogUserDetails userDetails) {
         return jwtUtil.getJwtToken(userDetails);
     }
+
 }

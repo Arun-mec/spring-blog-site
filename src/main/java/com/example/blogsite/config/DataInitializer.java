@@ -18,7 +18,7 @@ public class DataInitializer {
     @Bean
     CommandLineRunner initDatabase(UserRepository userRepository, PasswordEncoder passwordEncoder) {
         return args -> {
-            if (userRepository.findByEmail("admin@gmail.com").isEmpty()) {
+            if (userRepository.findByEmail("admin@gmail.com")==null) {
                 User user = User.builder()
                         .username("admin")
                         .password(passwordEncoder.encode("admin123"))
@@ -29,7 +29,7 @@ public class DataInitializer {
                 userRepository.save(user);
             }
 
-            if (userRepository.findByEmail("testuser@gmail.com").isEmpty()) {
+            if (userRepository.findByEmail("testuser@gmail.com")==null) {
                 User user = User.builder()
                         .username("testuser")
                         .password(passwordEncoder.encode("testuser123"))
