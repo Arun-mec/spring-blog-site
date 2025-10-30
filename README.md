@@ -31,18 +31,18 @@ Version Control: Git & GitHub<br />
 
 #### API description
 
-POST	/api/v1/auth	Authenticate user and recieve JWT token
+POST	/api/v1/auth	Authenticate user and recieve JWT token<br />
 
-GET	/api/v1/posts	Get all published posts
-POST	/api/v1/posts	Create a new post
-GET	/api/v1/posts/{id}	Get a post
-PUT	/api/v1/posts/{id}	Update a post
-DELETE	/api/v1/posts/{id}	Delete a post
-GET	/api/v1/posts/drafts	Get all draft post authenticated user
+GET	/api/v1/posts	Get all published posts<br />
+POST	/api/v1/posts	Create a new post<br />
+GET	/api/v1/posts/{id}	Get a post<br />
+PUT	/api/v1/posts/{id}	Update a post<br />
+DELETE	/api/v1/posts/{id}	Delete a post<br />
+GET	/api/v1/posts/drafts	Get all draft post authenticated user<br />
 		
-GET	/api/v1/categories	Get all categories
-POST	/api/v1/categories	Create a ceteogry
-DELETE	/api/v1/categories/{id}	Delete a category
+GET	/api/v1/categories	Get all categories<br />
+POST	/api/v1/categories	Create a ceteogry<br />
+DELETE	/api/v1/categories/{id}	Delete a category<br />
 		
 GET	/api/v1/tags	Get all tags
 POST	/api/v1/tags	Create a tag
