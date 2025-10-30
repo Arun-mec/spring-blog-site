@@ -1,11 +1,8 @@
 package com.example.blogsite.config;
 
-import com.example.blogsite.domain.dto.Role;
 import com.example.blogsite.domain.entity.User;
 import com.example.blogsite.repository.UserRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
-import org.springframework.cglib.core.Local;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.crypto.password.PasswordEncoder;

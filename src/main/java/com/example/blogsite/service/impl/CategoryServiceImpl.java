@@ -4,6 +4,7 @@ import com.example.blogsite.domain.dto.CategoryDto;
 import com.example.blogsite.domain.entity.Category;
 import com.example.blogsite.repository.CategoryRepository;
 import com.example.blogsite.service.CategoryService;
+import jakarta.persistence.EntityNotFoundException;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -44,6 +45,12 @@ public class CategoryServiceImpl implements CategoryService {
             }
             categoryRepository.deleteById(id);
         }
+    }
+
+    @Override
+    public Category getCategoryById(UUID categoryId) {
+        return categoryRepository.findById(categoryId)
+                .orElseThrow(() -> new EntityNotFoundException("No category found with id: "+categoryId));
     }
 
 }

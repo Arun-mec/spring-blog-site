@@ -1,5 +1,6 @@
 package com.example.blogsite.config;
 
+import com.example.blogsite.domain.Role;
 import com.example.blogsite.filter.JwtAuthenticationFilter;
 import jakarta.persistence.Entity;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,12 +36,13 @@ public class SecurityConfig {
                 .sessionManagement(session ->
                         session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(auth -> auth
-                    .requestMatchers(HttpMethod.GET, "api/v1/test").authenticated()
-                    .requestMatchers(HttpMethod.POST, "api/v1/auth").permitAll()
-                    .requestMatchers("api/v1/posts/**").permitAll()
-                    .requestMatchers(HttpMethod.GET, "api/v1/categories/**").permitAll()
-                    .requestMatchers(HttpMethod.POST, "api/v1/categories/**").authenticated()
-                    .requestMatchers("/api/v1/tags/**").permitAll()
+                        .requestMatchers(HttpMethod.GET, "api/v1/test").authenticated()
+                        .requestMatchers(HttpMethod.POST, "api/v1/auth").permitAll()
+                        .requestMatchers("/api/v1/posts/drafts").hasAuthority(Role.USER.name())
+                        .requestMatchers("api/v1/posts/**").permitAll()
+                        .requestMatchers("api/v1/categories/**").permitAll()
+                        .requestMatchers("/api/v1/tags/**").permitAll()
+                        .requestMatchers("/api/v1/users/**").permitAll()
                     .anyRequest().authenticated()
                 );
 

@@ -1,6 +1,8 @@
 package com.example.blogsite.domain.entity;
 
-import com.example.blogsite.domain.dto.Role;
+import com.example.blogsite.domain.PostStatus;
+import com.example.blogsite.domain.Role;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -40,6 +42,7 @@ public class User {
     @OneToMany(mappedBy = "user",
             cascade = CascadeType.ALL,
             orphanRemoval = true)
+    @JsonIgnore
     private List<Post> posts = new ArrayList<>();
 
     @Override
