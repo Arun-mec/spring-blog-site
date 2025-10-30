@@ -44,6 +44,6 @@ GET	/api/v1/categories	Get all categories<br />
 POST	/api/v1/categories	Create a ceteogry<br />
 DELETE	/api/v1/categories/{id}	Delete a category<br />
 		
-GET	/api/v1/tags	Get all tags
-POST	/api/v1/tags	Create a tag
-DELETE	/api/v1/tags/{id}	Delete a tag
+GET	/api/v1/tags	Get all tags<br />
+POST	/api/v1/tags	Create a tag<br />
+DELETE	/api/v1/tags/{id}	Delete a tag<br />
