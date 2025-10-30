@@ -8,26 +8,26 @@ It follows a clean modular architecture and supports role-based access for secur
 
 #### Key Features
 
-User Authentication: Secure login with JWT-based authorization.
-Post Management: Create, update, delete, and view posts. Supports draft and published states.
-Category Management: Organize posts under specific categories.
-Tag System: Associate multiple tags with posts for flexible content filtering.
-Role-based Access: Restricts post creation and modification to authenticated users.
-RESTful APIs: Clean, predictable endpoints following REST conventions.
+User Authentication: Secure login with JWT-based authorization.<br />
+Post Management: Create, update, delete, and view posts. Supports draft and published states.<br />
+Category Management: Organize posts under specific categories.<br />
+Tag System: Associate multiple tags with posts for flexible content filtering.<br />
+Role-based Access: Restricts post creation and modification to authenticated users.<br />
+RESTful APIs: Clean, predictable endpoints following REST conventions.<br />
 
 #### Core Entities
 
-Post → Represents blog content (title, content, author, tags, category, status).
-Tag → Describes keywords associated with posts.
-Category → Groups posts by topic.
-User → Handles authentication and role management.
+Post → Represents blog content (title, content, author, tags, category, status).<br />
+Tag → Describes keywords associated with posts.<br />
+Category → Groups posts by topic.<br />
+User → Handles authentication and role management.<br />
 
 #### Tech Stack
 
-Backend: Spring Boot, Java, Spring Security, JWT, JPA/Hibernate
-Database: PostgreSQL
-Build Tool: Maven
-Version Control: Git & GitHub
+Backend: Spring Boot, Java, Spring Security, JWT, JPA/Hibernate<br />
+Database: PostgreSQL<br />
+Build Tool: Maven<br />
+Version Control: Git & GitHub<br />
 
 #### API description
 
