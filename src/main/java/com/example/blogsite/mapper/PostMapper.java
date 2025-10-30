@@ -1,6 +1,6 @@
 package com.example.blogsite.mapper;
 
-import com.example.blogsite.domain.dto.PostDto;
+import com.example.blogsite.domain.dto.*;
 import com.example.blogsite.domain.entity.Post;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
@@ -14,4 +14,7 @@ public interface PostMapper {
     @Mapping(target="tags", source = "tags")
     PostDto toDto(Post post);
 
+    PostRequest toPostRequest(PostRequestDto postRequestDto);
+
+    UpdatePostRequest toUpdateRequest(UpdatePostReqDto updatePostReqDto);
 }

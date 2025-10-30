@@ -1,6 +1,7 @@
 package com.example.blogsite.service;
 
 import com.example.blogsite.domain.dto.PostRequest;
+import com.example.blogsite.domain.dto.UpdatePostRequest;
 import com.example.blogsite.domain.entity.Category;
 import com.example.blogsite.domain.entity.Post;
 import com.example.blogsite.domain.entity.Tag;
@@ -20,4 +21,8 @@ public interface PostService {
     Post createPost(PostRequest postRequest, User user);
 
     void deletePost(UUID id);
+
+    Post updatePost(UUID id, UpdatePostRequest updatePostRequest);
+
+    Post getPostById(UUID id);
 }

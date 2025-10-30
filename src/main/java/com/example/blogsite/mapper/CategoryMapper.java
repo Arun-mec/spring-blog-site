@@ -22,7 +22,7 @@ public interface CategoryMapper {
     default long calculatePostCount(List<Post> posts){
         if (posts==null) return 0;
         return posts.stream()
-                .filter(post -> post.getPostStatus().equals(PostStatus.PUBLISHED))
+                .filter(post -> post.getStatus().equals(PostStatus.PUBLISHED))
                 .count();
     }
 
