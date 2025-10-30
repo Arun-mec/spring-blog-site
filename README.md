@@ -1,12 +1,12 @@
 ## Blog Website
 
-### Description:
+#### Description:
 
 A full-stack Blog Management System designed to enable users to create, categorize, and manage blog content efficiently. 
 The system supports user authentication using JWT, and provides APIs for managing Posts, Tags, Categories, and Users. 
 It follows a clean modular architecture and supports role-based access for secure content management.
 
-### Key Features
+#### Key Features
 
 User Authentication: Secure login with JWT-based authorization.
 Post Management: Create, update, delete, and view posts. Supports draft and published states.
@@ -15,21 +15,21 @@ Tag System: Associate multiple tags with posts for flexible content filtering.
 Role-based Access: Restricts post creation and modification to authenticated users.
 RESTful APIs: Clean, predictable endpoints following REST conventions.
 
-### Core Entities
+#### Core Entities
 
 Post → Represents blog content (title, content, author, tags, category, status).
 Tag → Describes keywords associated with posts.
 Category → Groups posts by topic.
 User → Handles authentication and role management.
 
-### Tech Stack
+#### Tech Stack
 
 Backend: Spring Boot, Java, Spring Security, JWT, JPA/Hibernate
 Database: PostgreSQL
 Build Tool: Maven
 Version Control: Git & GitHub
 
-### API description
+#### API description
 
 POST	/api/v1/auth	Authenticate user and recieve JWT token
 
